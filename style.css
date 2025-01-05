@@ -1,0 +1,61 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f3e9;
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.kallender {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  max-width: 600px;
+  margin: 50px auto;
+}
+.day {
+  background-color: #e63946;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100px;
+  width: 120px;
+  border: 2px solid #6a994e;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.day.opened {
+  background-color: #ffcb77;
+  color: #6a994e;
+  cursor: default;
+  transform: scale(1.1);
+}
+.day:hover:not(.opened) {
+  transform: scale(1.05);
+}
+.joke {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  font-size: 12px;
+  color: #6a994e;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  padding: 5px;
+  display: none;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  max-height: 90%;
+  overflow-y: auto;
+}
+.day.opened .joke {
+  display: block;
+}
